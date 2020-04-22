@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Pitang.Treinamento.ONS.Entities\Pitang.Treinamento.ONS.Entities.csproj" />
+    <ProjectReference Include="..\Pitang.Treinamento.ONS.Repository\Pitang.Treinamento.ONS.Repository.csproj" />
+    <ProjectReference Include="..\Pitang.Treinamento.ONS.Services\Pitang.Treinamento.ONS.Services.csproj" />
+  </ItemGroup>
+</Project>
