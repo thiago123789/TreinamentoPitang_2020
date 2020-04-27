@@ -7,5 +7,7 @@ namespace Pitang.Treinamento.ONS.Entities
 
         public int IdAluno { get; set; }
     }
+
+
 }
 

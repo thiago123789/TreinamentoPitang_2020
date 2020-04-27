@@ -31,7 +31,13 @@ namespace Pitang.Treinamento.ONS.WebAPI
 
             services.AddScoped<IUserService, UserService>();
 
-            
+            #if Development
+            //services.AddDbContext(NHibernate)
+            // 
+            #else
+            //services.AddDbContext(EFCore);
+            //Injetar repositorio EFCore
+            #endif
 
         }
 

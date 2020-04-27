@@ -41,12 +41,7 @@ namespace Pitang.Treinamento.ONS.Repository.Impl.EFRepository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //Fluent API
-            modelBuilder.Entity<Aluno>()
-                .HasMany(e => e.Cursos)
-                .WithOne(e => e.Aluno)
-                .HasForeignKey(e => e.IdAluno);
-
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(TreinamentoDbContext).Assembly);
         }
 
         public void Audit()

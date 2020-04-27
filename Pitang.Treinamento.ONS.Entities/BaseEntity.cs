@@ -7,5 +7,7 @@ namespace Pitang.Treinamento.ONS.Entities
     {
         [Key]
         public int Id { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

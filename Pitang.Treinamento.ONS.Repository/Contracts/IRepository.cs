@@ -11,9 +11,9 @@ namespace Pitang.Treinamento.ONS.Repository.Contracts
         T Add(T entity);
         Task<T> AddAsync(T entity);
         T Update(T entity);
-        void Delete(T id);
-        void UnDelete(T id);
+        T Delete(T entity);
+        T UnDelete(T entity);
         IEnumerable<T> FindAll();
-        IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate, bool eager = false);
     }
 }

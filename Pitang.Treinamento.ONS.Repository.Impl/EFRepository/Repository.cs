@@ -25,14 +25,18 @@ namespace Pitang.Treinamento.ONS.Repository.Contracts
             throw new NotImplementedException();
         }
 
-        public Task<T> AddAsync(T entity)
+        public async  Task<T> AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            //await _context.Set<T>().AddAsync(entity);
+            await _entities.AddAsync(entity);
+            return entity;
         }
 
-        public void Delete(T id)
+        public T Delete(T entity)
         {
-            throw new NotImplementedException();
+            entity.IsDeleted = true;
+            _entities.Attach(entity).State = EntityState.Modified;
+            return entity;
         }
 
         public IEnumerable<T> FindAll()
@@ -40,23 +44,41 @@ namespace Pitang.Treinamento.ONS.Repository.Contracts
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate)
+        //Lazy loading <-
+        //Eager loading
+        private IQueryable<T> Query(bool eager = false)
         {
             var query = _entities.AsQueryable();
+            if (eager)
+            {
+                foreach (var property in _context.Model.FindEntityType(typeof(T)).GetNavigations())
+                {
+                    query = query.Include(property.Name);
+                }
+            }
+            return query;
+        }
+
+        public IEnumerable<T> FindBy(Expression<Func<T, bool>> predicate, bool eager = false)
+        {
+            var query = Query(eager);
 
             query = query.Where(predicate);
 
             return query.ToList();
         }
 
-        public void UnDelete(T id)
+        public T UnDelete(T entity)
         {
-            throw new NotImplementedException();
+            entity.IsDeleted = false;
+            _entities.Attach(entity).State = EntityState.Modified;
+            return entity; 
         }
 
         public T Update(T entity)
         {
-            throw new NotImplementedException();
+            _entities.Attach(entity).State = EntityState.Modified;
+            return entity;
         }
     }
 }

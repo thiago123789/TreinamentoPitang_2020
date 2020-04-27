@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="EFRepository\" />
     <Folder Include="Impl\" />
+    <Folder Include="Mapping\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Pitang.Treinamento.ONS.Entities\Pitang.Treinamento.ONS.Entities.csproj" />
