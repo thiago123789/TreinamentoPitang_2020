@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Pitang.Treinamento.ONS.Entities;
 using Pitang.Treinamento.ONS.Services;
@@ -52,5 +53,7 @@ namespace Pitang.Treinamento.ONS.WebAPI.Controllers
         {
 
         }
+
+
     }
 }

@@ -9,7 +9,10 @@ namespace Pitang.Treinamento.ONS.Repository.Impl.Mapping
     {
         public void Configure(EntityTypeBuilder<Curso> builder)
         {
-            throw new NotImplementedException();
+            builder
+                .HasOne(e => e.Aluno)
+                .WithMany(e => e.Cursos);
+
         }
     }
 }

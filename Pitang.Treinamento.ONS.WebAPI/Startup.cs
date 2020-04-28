@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Pitang.Treinamento.ONS.Repository.Contracts;
+using Pitang.Treinamento.ONS.Repository.Impl.EFRepository;
 using Pitang.Treinamento.ONS.Services;
 using Pitang.Treinamento.ONS.Services.Impl;
 
@@ -30,6 +32,10 @@ namespace Pitang.Treinamento.ONS.WebAPI
             services.AddControllers();
 
             services.AddScoped<IUserService, UserService>();
+
+
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             #if Development
             //services.AddDbContext(NHibernate)

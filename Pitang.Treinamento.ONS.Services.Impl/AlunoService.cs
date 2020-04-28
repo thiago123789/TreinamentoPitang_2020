@@ -9,9 +9,9 @@ namespace Pitang.Treinamento.ONS.Services.Impl
     {
         private readonly IAlunoRepository alunoRepository;
         
-        public AlunoService(IAlunoRepository alunoRepository)
+        public AlunoService(IUnitOfWork unitOfWork)
         {
-            this.alunoRepository = alunoRepository;
+            this.alunoRepository = unitOfWork.alunoRepository;
         }
 
         public void MetodoTeste()

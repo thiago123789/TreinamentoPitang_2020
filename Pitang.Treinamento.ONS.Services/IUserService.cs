@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 namespace Pitang.Treinamento.ONS.Services
 {
     public interface IUserService //: SinletonLifeCycle
     {
-        object Get(int id);
+        Task<object> GetAsync(int id);
     }
 }

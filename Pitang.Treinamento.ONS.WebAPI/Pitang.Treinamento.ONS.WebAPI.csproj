@@ -12,6 +12,12 @@
     <ProjectReference Include="..\Pitang.Treinamento.ONS.Services.Impl\Pitang.Treinamento.ONS.Services.Impl.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Pitang.Treinamento.ONS.Repository.Impl\Pitang.Treinamento.ONS.Repository.Impl.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Pitang.Treinamento.ONS.Repository\Pitang.Treinamento.ONS.Repository.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />

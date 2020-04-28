@@ -14,6 +14,9 @@ namespace Pitang.Treinamento.ONS.Repository.Impl.Mapping
                 .WithOne()
                 .HasForeignKey(e => e.IdAluno);
 
+
+
+
         }
     }
 }

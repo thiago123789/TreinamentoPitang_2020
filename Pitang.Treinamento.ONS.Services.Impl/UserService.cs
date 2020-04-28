@@ -1,10 +1,12 @@
 ﻿using System;
+using Pitang.Treinamento.ONS.Repository.Contracts;
 
 namespace Pitang.Treinamento.ONS.Services.Impl
 {
     public class UserService : IUserService
     {
-        public UserService()
+
+        public UserService(IUnitOfWork unitOfWork)
         {
         }
 

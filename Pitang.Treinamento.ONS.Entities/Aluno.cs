@@ -15,7 +15,7 @@ namespace Pitang.Treinamento.ONS.Entities
 
         public Aluno()
         {
-            this.Cursos = new List<Curso>();
+
         }
     }
 }
